@@ -1,11 +1,11 @@
 #!/bin/bash
-docker push kostyaurysov/sample-node
+docker push cc17bul/ci-image
 
-ssh deploy@35.187.30.81 << EOF
-docker pull kostyaurysov/sample-node:latest
+ssh deploy@35.195.131.45 << EOF
+docker pull cc17bul/ci-image:latest
 docker stop web || true
 docker rm web || true
-docker rmi kostyaurysov/sample-node:current || true
-docker tag kostyaurysov/sample-node:latest kostyaurysov/sample-node:current
-docker run -d --restart always --name web -p 80:80 kostyaurysov/sample-node:current
+docker rmi cc17bul/ci-image:current || true
+docker tag cc17bul/ci-image:latest cc17bul/ci-image:current
+docker run -d --restart always --name web -p 80:80 cc17bul/ci-image:current
 EOF
