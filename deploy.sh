@@ -1,7 +1,7 @@
 #!/bin/bash
 docker push cc17bul/ci-image
 
-ssh deploy@35.195.131.45 << EOF
+ssh luabul@35.195.131.45 << EOF
 docker pull cc17bul/ci-image:latest
 docker stop web || true
 docker rm web || true
