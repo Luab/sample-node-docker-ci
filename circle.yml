@@ -4,11 +4,11 @@ machine:
 
 dependencies:
   override:
-    - docker build -t kostyaurysov/sample-node .
+    - docker build -t cc17bul/ci-image .
 
 test:
   override:
-    - docker run kostyaurysov/sample-node npm test
+    - docker run cc17bul/ci-image npm test
 
 deployment:
   production:

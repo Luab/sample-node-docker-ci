@@ -4,9 +4,8 @@ var express = require("express");
 
 express()
  .get("*", function(req, res) {
-    db("users").then(function(data) {
-      res.send(data);
-    });
+	res.send("CI cnd CD lab finished (hopefully)"); 
+   });
  })
  .listen(80, function(err) {
     if (err) {
